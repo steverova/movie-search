@@ -44,9 +44,9 @@ function App() {
                   width: "100%",
                   border: errors && "1px solid transparent",
                   borderColor: errors && "#ff7676",
-                  color: errors && "#ff7676", // Agrega esto para cambiar el color del texto del input cuando hay un error
+                  color: errors && "#ff7676", 
                 }}
-                className={errors.errors ? "error" : ""} // Agrega la clase "error" cuando hay un error
+                className={errors.errors ? "error" : ""} 
                 name="searchValue"
                 value={searchValue.searchValue || ""}
                 onChange={handleChange}
@@ -57,7 +57,6 @@ function App() {
                     : "Avengers, John Wick, Avatar..."
                 }
               />
-
               <button type="submit">Search</button>
             </div>
             <div></div>

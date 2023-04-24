@@ -29,7 +29,7 @@ img {
 .movies {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 2fr));
   gap: 10px;
 
 }
@@ -45,10 +45,11 @@ article {
   border-radius: 10px;
   height: 80px;
   text-align: center;
-  font-size: large;
+  font-size:15px ;
+  padding: 3px;
   margin-bottom: 10px;
   color: rgb(196, 196, 204);
-  padding: px;
+  
 
 
   display: flex;
