@@ -21,7 +21,9 @@ form {
   justify-content: center;
 }
 
-
+img {
+  border-radius: 10px;
+}
 
 
 .movies {
@@ -46,6 +48,7 @@ article {
   font-size: large;
   margin-bottom: 10px;
   color: rgb(196, 196, 204);
+  padding: px;
 
 
   display: flex;
@@ -55,27 +58,11 @@ article {
 
 }
 
-.search-group {
+.search-group{
   display: flex;
 }
 
 
 .error::placeholder {
   color: #ff7676;
-}
-
-.image-container {
-  height: 400px;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  border-radius:6px;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
-  object-fit: cover;
-  transition: .3s;
 }
