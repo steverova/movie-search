@@ -4,7 +4,7 @@
   justify-items: center;
   align-items: center;
   width: 100%;
-  max-width: 1000px;
+
 }
 
 
@@ -65,4 +65,9 @@ article {
 
 .error::placeholder {
   color: #ff7676;
+}
+
+.main{
+  background-color: #ff7676;
+  width: 1000px;
 }

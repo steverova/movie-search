@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div >
         <header>
           <h1>Movie Search</h1>
           <form onSubmit={handleSubmit}>
