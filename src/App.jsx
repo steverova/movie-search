@@ -3,9 +3,11 @@ import "./App.css";
 import { Movies } from "./components/Movies";
 import { useMovies } from "./hooks/useMovies";
 import * as yup from "yup";
+import ReactPaginate from 'react-paginate';
 
 function App() {
   const [searchValue, setSearchValue] = useState({ searchValue: "", page: 1 });
+  const [activePage, setActivePage] = useState(1);
   const [errors, setErrors] = useState("");
   const { movies: mappedMovies, getMovies, totalRes } = useMovies(searchValue);
 
@@ -19,6 +21,8 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setSearchValue((searchValue) => ({ ...searchValue, page: 1 }));
+    setActivePage(1);
     schema
       .validate(searchValue)
       .then((valid) => {
@@ -31,6 +35,7 @@ function App() {
   const clickPage = (index) => {
     setSearchValue((searchValue) => ({ ...searchValue, page: index }));
     console.log(searchValue);
+    setActivePage(index);
   };
 
   const handleChange = (event) => {
@@ -42,7 +47,14 @@ function App() {
   const pagination = () => {
     const elements = [];
     for (let i = 1; i < totalRes / 10 + 1; i++) {
-      elements.push(<button onClick={() => clickPage(i)}>{i}</button>);
+      elements.push(
+        <button
+          style={{ backgroundColor: activePage === i ? "#ff5148" : "" }}
+          key={i}
+          onClick={() => clickPage(i)}>
+          {i}
+        </button>
+      );
     }
     return elements;
   };
@@ -58,8 +70,8 @@ function App() {
                 style={{
                   width: "100%",
                   border: errors && "1px solid transparent",
-                  borderColor: errors && "#ff7676",
-                  color: errors && "#ff7676",
+                  borderColor: errors && "#ff5148",
+                  color: errors && "#ff5148",
                 }}
                 className={errors.errors ? "error" : ""}
                 name="searchValue"
@@ -86,7 +98,7 @@ function App() {
 
           <div style={{ marginTop: "10px", marginBottom: "10px" }}>
             <ul style={{ display: "flex" }}>{pagination()}</ul>
-            <p> {"total de resultados: " + totalRes}</p>
+            <p> {totalRes ? "total de resultados: " + totalRes : ""}</p>
           </div>
         </main>
       </div>
