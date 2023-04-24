@@ -91,7 +91,7 @@ function App() {
         </header>
         <main className="page">
           <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-            <ul style={{ display: "flex" }}>{pagination()}</ul>
+            <ul style={{ display: "flex",flexWrap: 'wrap'  }}>{pagination()}</ul>
           </div>
 
           <Movies movies={mappedMovies} />
