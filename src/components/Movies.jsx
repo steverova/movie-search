@@ -4,8 +4,7 @@ export const MovieList = ({ movies }) => {
       {movies.map((movie) => (
         <article className="movie" key={movie.id}>
           <div className="title_movie">
-            <p>{movie.title}</p>
-            <p>{movie.year}</p>
+            <span>{movie.title +" - "+ movie.year}</span>
           </div>
           <div className="image-container">
           <img src={movie.poster} alt={movie.title} />
