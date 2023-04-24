@@ -18,7 +18,7 @@ export const MovieList = ({ movies }) => {
 };
 
 export const NoResult = () => {
-  return <p>No results</p>;
+  return <p>No results, enter a value for the search </p>;
 };
 
 export const Movies = ({ movies }) => {
