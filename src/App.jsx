@@ -3,7 +3,6 @@ import "./App.css";
 import { Movies } from "./components/Movies";
 import { useMovies } from "./hooks/useMovies";
 import * as yup from "yup";
-import ReactPaginate from 'react-paginate';
 
 function App() {
   const [searchValue, setSearchValue] = useState({ searchValue: "", page: 1 });
@@ -63,7 +62,7 @@ function App() {
     <>
       <div>
         <header>
-          <h1>Movie Search</h1>
+          <h1 style={{color: '#ff5148'}} >Movie Search</h1>
           <form onSubmit={handleSubmit}>
             <div style={{ width: "100%" }} className="search-group">
               <input
