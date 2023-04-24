@@ -1,15 +1,15 @@
 export const MovieList = ({ movies }) => {
   return (
     <div className="movies">
+      {movies.totalResults}
       {movies.map((movie) => (
         <article className="movie" key={movie.id}>
           <div className="title_movie">
             <span>{movie.title +" - "+ movie.year}</span>
           </div>
           <div className="image-container">
-          <img src={movie.poster} alt={movie.title} />
+          <img src={movie.poster === "N/A" ? 'https://eticketsolutions.com/demo/themes/e-ticket/img/movie.jpg' : movie.poster} alt={movie.title} />
           </div>
-          
         </article>
       ))}
     </div>
