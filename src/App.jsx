@@ -91,13 +91,14 @@ function App() {
         </header>
         <main className="page">
           <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-            <ul style={{ display: "flex",flexWrap: 'wrap'  }}>{pagination()}</ul>
+          <p> {totalRes ? "Showing " +totalRes+" results" : "No results"}</p>
+            <ul style={{ display: "flex",flexWrap: 'wrap', marginTop: "10px"  }}>{pagination()}</ul>
           </div>
 
           <Movies movies={mappedMovies} />
 
           <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-            <ul style={{ display: "flex" }}>{pagination()}</ul>
+            <ul  style={{ display: "flex",flexWrap: 'wrap', marginTop: "10px"  }}>{pagination()}</ul>
             <p> {totalRes ? "total de resultados: " + totalRes : ""}</p>
           </div>
         </main>
