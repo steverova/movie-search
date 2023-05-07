@@ -15,8 +15,8 @@ export default function MovieInfo() {
 
   return (
     <>
-      <div style={{}}  className="container-fluid ">
-        <div style={{ marginTop: "20px",  }} className="row">
+      <div style={{padding: "60px 50px 60px 0px"}} className="container-fluid ">
+        <div style={{ marginTop: "20px" }} className="row">
           <article>
             <p style={{ fontSize: "30px", textAlign: "center" }}>
               {movie.title} ({movie.year})
@@ -25,8 +25,14 @@ export default function MovieInfo() {
 
           <article style={{ marginTop: "10px" }}>
             <div className="row">
-
-              <div style={{ textAlign: "center", marginTop: "20px",marginBottom: "20px", }} className="col-md-6">
+              <div
+                style={{
+                  textAlign: "center",
+                  marginTop: "20px",
+                  marginBottom: "20px",
+                }}
+                className="col-md-6"
+              >
                 <img src={movie.poster} alt={movie.title} />
               </div>
 
