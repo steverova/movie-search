@@ -1,0 +1,42 @@
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 4px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.badge:hover {
+  opacity: 0.8;
+}
+
+/* Ajusta el ancho del badge dependiendo de su contenido */
+.badge:not(:last-child) {
+  width: auto;
+}
+
+/* Ajusta el color de fondo del badge */
+.badge:first-child {
+  background-color: #007bff;
+}
+
+.badge:nth-child(2) {
+  background-color: #dc3545;
+}
+
+.badge:nth-child(3) {
+  background-color: #28a745;
+}
+
+/* Agrega más estilos para más badges si lo necesitas */

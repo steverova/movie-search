@@ -1,19 +1,41 @@
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
 export const MovieList = ({ movies }) => {
   return (
     <div className="movies">
-      {movies.totalResults}
       {movies.map((movie) => (
-        <article className="movie" key={movie.id}>
-          <div className="title_movie">
-            <span>{movie.title +" - "+ movie.year}</span>
-          </div>
-          <div className="image-container">
-          <img src={movie.poster === "N/A" ? 'https://eticketsolutions.com/demo/themes/e-ticket/img/movie.jpg' : movie.poster} alt={movie.title} />
-          </div>
-        </article>
+        <Link key={movie.id} to={`movie/${movie.id}`}>
+          <article className="movie">
+            <div className="title_movie">
+              <span>{movie.title + " (" + movie.year + ") "}</span>
+            </div>
+            <div className="image-container">
+              <img
+                src={
+                  movie.poster === "N/A"
+                    ? "https://eticketsolutions.com/demo/themes/e-ticket/img/movie.jpg"
+                    : movie.poster
+                }
+                alt={movie.title}
+              />
+            </div>
+          </article>
+        </Link>
       ))}
     </div>
   );
+};
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      year: PropTypes.string.isRequired,
+      poster: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export const NoResult = () => {
@@ -23,4 +45,15 @@ export const NoResult = () => {
 export const Movies = ({ movies }) => {
   const hasMovies = movies?.length > 0;
   return hasMovies ? <MovieList movies={movies} /> : <NoResult />;
+};
+
+Movies.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      year: PropTypes.string.isRequired,
+      poster: PropTypes.string.isRequired,
+    })
+  ),
 };
