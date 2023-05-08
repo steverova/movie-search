@@ -1,7 +1,7 @@
 const API_KEY = "4287ad07";
 
 export const searchMovies = async (search) => {
-  console.log("entro a searchMovies");
+
   if (search === "") return null;
   try {
     const data = await fetch(
@@ -11,8 +11,6 @@ export const searchMovies = async (search) => {
     const json = await data.json();
     const moviesjson = await json.Search;
     const totalResults = json.totalResults;
-
-    console.log(totalResults);
 
     const movies = moviesjson?.map((movie) => ({
       id: movie.imdbID,

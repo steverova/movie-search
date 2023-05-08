@@ -5,8 +5,6 @@ export const useMovies = (search) => {
   const [movies, setMovies] = useState([]);
   const [totalRes, setTotalResult] = useState(0);
 
-  console.log(search.searchValue.length);
-
   const getMovies = async () => {
     const { movies, totalResults } = await searchMovies(search);
     setMovies(movies);

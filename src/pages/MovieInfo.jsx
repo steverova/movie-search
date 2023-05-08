@@ -4,6 +4,7 @@ import { useMovie } from "../hooks/useMovie";
 import ActorList from "../components/ActorList";
 import Badges from "../components/Badges";
 import "../assets/loader.css";
+import Footer from "../components/footer";
 
 export default function MovieInfo() {
   let { title_id } = useParams();
@@ -20,7 +21,7 @@ export default function MovieInfo() {
     <>
       {movie.length !== 0 ? (
         <div
-          style={{ padding: "60px 50px 60px 0px" }}
+          style={{ padding: "0px 0px 60px 0px" }}
           className="container-fluid "
         >
           <div style={{ marginTop: "20px" }} className="row">
@@ -114,6 +115,7 @@ export default function MovieInfo() {
               </article>
             </Link>
           </div>
+          <Footer></Footer>
         </div>
       ) : (
         <div className="container-fluid center">

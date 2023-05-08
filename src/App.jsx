@@ -4,6 +4,7 @@ import { Movies } from "./components/Movies";
 import { useMovies } from "./hooks/useMovies";
 import * as yup from "yup";
 import Pagination from "./components/Pagination";
+import Footer from "./components/footer";
 
 function App() {
   const [searchValue, setSearchValue] = useState({
@@ -21,18 +22,6 @@ function App() {
 
   useEffect(() => {
     getMovies();
-
-    const currentYear = new Date().getFullYear();
-    // Generar opciones desde 1930 hasta el año actual
-    const options = [];
-    for (let year = currentYear; year >= 1930; year--) {
-      options.push(
-        <option key={year} value={year}>
-          {year}
-        </option>
-      );
-    }
-    // Establecer las opciones en el estado
   }, [searchValue.page]);
 
   const handleSubmit = (event) => {
@@ -41,7 +30,7 @@ function App() {
     setActivePage(1);
     schema
       .validate(searchValue)
-      .then((valid) => {
+      .then(() => {
         getMovies();
       })
       .catch((err) => setErrors(err));
@@ -118,29 +107,7 @@ function App() {
             <p> {totalRes ? "total de resultados: " + totalRes : ""}</p>
           </div>
         </main>
-        <hr></hr>
-        <div
-          style={{
-            textAlign: "center",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <a
-            className="text-decoration-none"
-            href="https://github.com/steverova"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              style={{ width: "30px" }}
-              className="ms-3"
-              src="https://upload.wikimedia.org/wikipedia/commons/2/24/Github_logo_svg.svg"
-              alt=""
-            />
-          </a>
-        </div>
+        <Footer></Footer>
       </div>
     </>
   );
