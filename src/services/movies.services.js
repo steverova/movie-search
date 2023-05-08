@@ -52,10 +52,31 @@ export const getMovieById = async (title_id) => {
       poster: result?.Poster,
     };
 
-    console.log(movie)
-
     return { movie };
   } catch (error) {
     throw new Error("Error getting movie: ", error);
+  }
+};
+
+export const moviesByYear = async (search) => {
+  try {
+    const data = await fetch(
+      //   `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`
+      `https://www.omdbapi.com/?apikey=4287ad07&s=movie&y=${search.year}&type=movie&page=${search.page}`
+    );
+    const json = await data.json();
+    const moviesjson = await json.Search;
+    const totalResults = json.totalResults;
+
+    const movies = moviesjson?.map((movie) => ({
+      id: movie.imdbID,
+      title: movie.Title,
+      year: movie.Year,
+      poster: movie.Poster,
+    }));
+
+     return { movies, totalResults };
+  } catch (error) {
+    throw new Error("Error Searching movies");
   }
 };

@@ -4,9 +4,7 @@
   justify-items: center;
   align-items: center;
   width: 100%;
-
 }
-
 
 main {
   display: flex;
@@ -25,13 +23,11 @@ img {
   border-radius: 10px;
 }
 
-
 .movies {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(160px, 2fr));
   gap: 10px;
-
 }
 
 article {
@@ -45,30 +41,26 @@ article {
   border-radius: 10px;
   height: 80px;
   text-align: center;
-  font-size:15px ;
+  font-size: 15px;
   padding: 3px;
   margin-bottom: 10px;
   color: rgb(196, 196, 204);
-  
-
 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
-.search-group{
+.search-group {
   display: flex;
 }
-
 
 .error::placeholder {
   color: #ff7676;
 }
 
-.main{
+.main {
   background-color: #ff7676;
   width: 1000px;
 }
@@ -79,50 +71,77 @@ article {
   list-style: none;
   margin-top: 20px;
   padding: 0;
- }
- 
- .pagination a {
+}
+
+.pagination a {
   cursor: default;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #6c7ac9;
   color: #6c7ac9;
   margin-left: 10px;
- }
- 
- .pagination li:not(.disabled) a:hover {
+}
+
+.pagination li:not(.disabled) a:hover {
   background-color: bisque;
   cursor: pointer;
- }
- 
- .pagination li a {
+}
+
+.pagination li a {
   font-weight: bold;
- }
- 
- .pagination li.active a {
+}
+
+.pagination li.active a {
   color: #fff;
   background: #6c7ac9;
- }
- 
- .pagination li.disabled a {
+}
+
+.pagination li.disabled a {
   pointer-events: none;
   color: rgb(198, 197, 202);
   border: 1px solid rgb(198, 197, 202);
- }
+}
 
-a:link { text-decoration: none; }
+a:link {
+  text-decoration: none;
+}
 
+a:visited {
+  text-decoration: none;
+}
 
-a:visited { text-decoration: none; }
+a:hover {
+  text-decoration: none;
+}
 
+a:active {
+  text-decoration: none;
+}
 
-a:hover { text-decoration: none; }
+.image-container {
 
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border-radius: 6px;
+  overflow: hidden;
+}
 
-a:active { text-decoration: none; }
+.image-container img {
 
+  border-radius: 6px;
+  object-fit: cover;
+  transition: 0.3s;
+}
 
+.image{
+  height: 250px;
+  background-color: #ff7676;
+}
 
-
-
-
+.image-container img:hover {
+ 
+  border-radius: 6px;
+  object-fit: cover;
+  transform: scale(1.1);
+}

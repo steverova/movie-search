@@ -11,7 +11,7 @@ export const MovieList = ({ movies }) => {
               <span>{movie.title + " (" + movie.year + ") "}</span>
             </div>
             <div className="image-container">
-              <img
+              <img className="image"
                 src={
                   movie.poster === "N/A"
                     ? "https://eticketsolutions.com/demo/themes/e-ticket/img/movie.jpg"

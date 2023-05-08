@@ -40,7 +40,14 @@ export default function MovieInfo() {
                   }}
                   className="col-md-6"
                 >
-                  <img src={movie.poster} alt={movie.title} />
+                  <img
+                    src={
+                      movie.poster === "N/A"
+                        ? "https://eticketsolutions.com/demo/themes/e-ticket/img/movie.jpg"
+                        : movie.poster
+                    }
+                    alt={movie.title}
+                  />
                 </div>
 
                 <div className="col-md-6">
@@ -85,15 +92,31 @@ export default function MovieInfo() {
               </div>
             </article>
             <Link to="/">
-              <article style={{ marginTop: "20px", textAlign: "center" }}>
-                <i className="fa-solid fa-house fa-2x"></i>
+              <article
+                style={{
+                  marginTop: "20px",
+                  textAlign: "center",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <i className="fa-solid fa-house fa-2x"></i>
+                </div>
+                <div>
+                  <a
+                    target="blank"
+                    href={`https://www.imdb.com/title/${title_id}`}
+                  >
+                    <i className="fa-brands fa-imdb fa-3x"></i>
+                  </a>
+                </div>
               </article>
             </Link>
           </div>
         </div>
       ) : (
         <div className="container-fluid center">
-
           <span className="loader"></span>
         </div>
       )}
