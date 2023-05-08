@@ -49,7 +49,7 @@ function App() {
 
   const pagination = (
     <Pagination
-      totalResult={Math.ceil(totalRes / 10)}
+      totalResult={totalRes}
       maxButtons={2}
       onPageChange={clickPage}
       activePage={activePage}
@@ -88,10 +88,7 @@ function App() {
         </header>
         <main className="page">
           <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-            <p>
-              {" "}
-              {totalRes ? "Showing " + totalRes + " results" : "No results"}
-            </p>
+
             <ul
               style={{ display: "flex", flexWrap: "wrap", marginTop: "10px" }}
             ></ul>
@@ -104,7 +101,7 @@ function App() {
             >
               {pagination}
             </ul>
-            <p> {totalRes ? "total de resultados: " + totalRes : ""}</p>
+            
           </div>
         </main>
         <Footer></Footer>

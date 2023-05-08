@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-export default function Pagination({ totalResult, maxButtons, onPageChange, activePage }) {
+export default function Pagination({
+  totalResult,
+  maxButtons,
+  onPageChange,
+  activePage,
+}) {
   const [currentPage, setCurrentPage] = useState(1);
+  let startPage, endPage, records;
+  records = totalResult;
+
+  totalResult = Math.ceil(totalResult / 10);
 
   useEffect(() => {
     setCurrentPage(activePage);
   }, [activePage]);
-
-  let startPage, endPage;
 
   if (totalResult <= maxButtons) {
     startPage = 1;
@@ -46,6 +53,7 @@ export default function Pagination({ totalResult, maxButtons, onPageChange, acti
     <>
       {totalResult > 1 && (
         <div>
+          <p style={{margin: "10px 10px 10px 10px"}}>   {records ? "Showing " + records + " records" : "No results"}</p>
           {currentPage > 1 && (
             <button onClick={() => handlePageChange(currentPage - 1)}>
               &lt;&lt;
