@@ -4,7 +4,7 @@ import { useMovie } from "../hooks/useMovie";
 import ActorList from "../components/ActorList";
 import Badges from "../components/Badges";
 import "../assets/loader.css";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 
 export default function MovieInfo() {
   let { title_id } = useParams();

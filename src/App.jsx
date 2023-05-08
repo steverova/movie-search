@@ -4,7 +4,7 @@ import { Movies } from "./components/Movies";
 import { useMovies } from "./hooks/useMovies";
 import * as yup from "yup";
 import Pagination from "./components/Pagination";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 
 function App() {
   const [searchValue, setSearchValue] = useState({
