@@ -61,7 +61,7 @@ function App() {
     <>
       <div>
         <header>
-          <h1 style={{ color: "#ff5148" }}>Movie Search</h1>
+          <h1 style={{ color: "#ff5148" }}>Movie Search OMDB</h1>
           <form onSubmit={handleSubmit}>
             <div style={{ width: "100%" }} className="search-group">
               <input
