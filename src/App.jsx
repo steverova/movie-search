@@ -49,15 +49,6 @@ function App() {
     setErrors("");
   };
 
-  const pagination = (
-    <Pagination
-      totalResult={totalRes}
-      maxButtons={2}
-      onPageChange={clickPage}
-      activePage={activePage}
-    />
-  );
-
   return (
     <>
       <div>
@@ -90,20 +81,28 @@ function App() {
         </header>
         <main className="page">
           <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-
             <ul
               style={{ display: "flex", flexWrap: "wrap", marginTop: "10px" }}
             ></ul>
-            {pagination}
+            <Pagination
+              totalResult={totalRes}
+              maxButtons={2}
+              onPageChange={clickPage}
+              activePage={activePage}
+            />
           </div>
           <Movies movies={mappedMovies} />
           <div style={{ marginTop: "10px", marginBottom: "10px" }}>
             <ul
               style={{ display: "flex", flexWrap: "wrap", marginTop: "10px" }}
             >
-              {pagination}
+              <Pagination
+                totalResult={totalRes}
+                maxButtons={2}
+                onPageChange={clickPage}
+                activePage={activePage}
+              />
             </ul>
-            
           </div>
         </main>
         <Footer></Footer>
