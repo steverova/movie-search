@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useMovie } from "../hooks/useMovie";
