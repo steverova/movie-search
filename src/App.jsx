@@ -5,10 +5,11 @@ import { useMovies } from "./hooks/useMovies";
 import * as yup from "yup";
 import Pagination from "./components/Pagination";
 import Footer from "./components/Footer";
+import Moviefranchise from "./mocks/Moviefranchise";
 
 function App() {
   const [searchValue, setSearchValue] = useState({
-    searchValue: "avengers",
+    searchValue: Moviefranchise[Math.floor(Math.random() * Moviefranchise.length) + 1],
     year: 2023,
     page: 1,
   });
