@@ -21,11 +21,8 @@ export default function MovieInfo() {
   return (
     <>
       {movie.length !== 0 ? (
-        <div
-          style={{ padding: "0px 0px 60px 0px" }}
-          className="container-fluid "
-        >
-          <div style={{ marginTop: "20px" }} className="row">
+        <div className="container-fluid">
+          <div className="row">
             <article>
               <p style={{ fontSize: "30px", textAlign: "center" }}>
                 {movie.title} ({movie.year})
@@ -37,10 +34,8 @@ export default function MovieInfo() {
                 <div
                   style={{
                     textAlign: "center",
-                    marginTop: "20px",
-                    marginBottom: "20px",
                   }}
-                  className="col-md-6"
+                  className="col-md-6 p-5"
                 >
                   <img
                     src={
@@ -52,8 +47,8 @@ export default function MovieInfo() {
                   />
                 </div>
 
-                <div className="col-md-6">
-                  <div style={{ marginTop: "30px" }}>
+                <div className="d-flex col-md-6 p-5">
+                  <div>
                     <p style={{ fontSize: "1.1em" }}>{movie.plot}</p>
 
                     <hr></hr>
