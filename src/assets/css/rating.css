@@ -1,0 +1,29 @@
+:root {
+  --star-size: 30px;
+  --star-color: #27374b;
+  --star-background: #ffd966;
+}
+
+.Stars {
+  --percent: calc(var(--rating) / 10 * 100%);
+
+  display: inline-block;
+  text-align: center;
+  font-size: var(--star-size);
+  font-family: Times;
+  line-height: 1;
+
+  &::before {
+    content: "🟐🟐🟐🟐🟐🟐🟐🟐🟐🟐";
+    letter-spacing: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--star-background) var(--percent),
+      var(--star-color) var(--percent)
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

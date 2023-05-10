@@ -6,10 +6,12 @@ import * as yup from "yup";
 import Footer from "./components/Footer";
 import Moviefranchise from "./mocks/Moviefranchise";
 import PaginationCustom from "./components/PaginationCustom";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   const [searchValue, setSearchValue] = useState({
-    searchValue: Moviefranchise[Math.floor(Math.random() * Moviefranchise.length) + 1],
+    searchValue:
+      Moviefranchise[Math.floor(Math.random() * Moviefranchise.length)],
     year: 2023,
     page: 1,
   });
@@ -23,7 +25,7 @@ function App() {
 
   useEffect(() => {
     getMovies();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchValue.page]);
 
   const handleSubmit = (event) => {
@@ -55,58 +57,34 @@ function App() {
         <header>
           <h1 style={{ color: "#ff5148" }}>Movie Search OMDB</h1>
           <form onSubmit={handleSubmit}>
-            <div style={{ width: "100%" }} className="search-group">
-              <input
-                style={{
-                  width: "100%",
-                  border: errors && "1px solid transparent",
-                  borderColor: errors && "#ff5148",
-                  color: errors && "#ff5148",
-                }}
-                className={errors.errors ? "error" : ""}
-                name="searchValue"
+            <div style={{ display: "flex", width: "100%" }}>
+              <SearchBar
                 value={searchValue.searchValue || ""}
                 onChange={handleChange}
-                type="text"
-                placeholder={
-                  errors.errors
-                    ? errors.errors + "!!"
-                    : "Avengers, John Wick, Avatar..."
-                }
+                errors={errors}
               />
               <button type="submit">Search</button>
             </div>
-            <div></div>
           </form>
         </header>
+
         <main className="page">
-          <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-            <ul
-              style={{ display: "flex", flexWrap: "wrap", marginTop: "10px" }}
-            ></ul>
-            <PaginationCustom
-              totalResult={totalRes}
-              maxButtons={2}
-              onPageChange={clickPage}
-              activePage={activePage}
-            />
-          </div>
-          <div>
-  
-          </div>
+
+          <PaginationCustom
+            totalResult={totalRes}
+            maxButtons={2}
+            onPageChange={clickPage}
+            activePage={activePage}
+          />
+
           <Movies movies={mappedMovies} />
-          <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-            <ul
-              style={{ display: "flex", flexWrap: "wrap", marginTop: "10px" }}
-            >
-              <PaginationCustom
-                totalResult={totalRes}
-                maxButtons={2}
-                onPageChange={clickPage}
-                activePage={activePage}
-              />
-            </ul>
-          </div>
+
+          <PaginationCustom
+            totalResult={totalRes}
+            maxButtons={2}
+            onPageChange={clickPage}
+            activePage={activePage}
+          />
         </main>
         <Footer></Footer>
       </div>

@@ -28,7 +28,7 @@ export const searchMovies = async (search) => {
 export const getMovieById = async (title_id) => {
   try {
     const data = await fetch(
-      `https://www.omdbapi.com/?apikey=${API_KEY}&i=${title_id}`
+      `https://www.omdbapi.com/?apikey=${API_KEY}&i=${title_id}&plot=full`
     );
 
     const result = await data.json();
@@ -48,6 +48,8 @@ export const getMovieById = async (title_id) => {
       country: result?.Country,
       awards: result?.Awards,
       poster: result?.Poster,
+      boxOffice: result?.BoxOffice,
+      rating: result?.imdbRating 
     };
 
     return { movie };

@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import coverNotFound from "../assets/cover.png"
+import "../assets/css/movie.css"
+
 
 export const MovieList = ({ movies }) => {
   return (
-    <div className="movies">
+    <div className="movies ">
+      
       {movies.map((movie) => (
         <Link key={movie.id} to={`movie/${movie.id}`}>
-          <article className="movie">
+          <article className="movie movie-enter">
             <div className="title_movie">
               <span>{movie.title + " (" + movie.year + ") "}</span>
             </div>

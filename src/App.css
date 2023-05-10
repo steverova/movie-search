@@ -59,9 +59,7 @@ article {
   flex-direction: column;
 }
 
-.search-group {
-  display: flex;
-}
+
 
 .error::placeholder {
   color: #ff7676;

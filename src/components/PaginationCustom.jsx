@@ -52,7 +52,7 @@ export default function PaginationCustom({
   return (
     <>
       {totalResult > 1 && (
-        <div>
+        <div style={{ marginTop: "10px", marginBottom: "10px" }}>
           <p style={{margin: "10px 10px 10px 10px"}}>   {records ? "Showing " + records + " records" : "No results"}</p>
           {currentPage > 1 && (
             <button onClick={() => handlePageChange(currentPage - 1)}>

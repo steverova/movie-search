@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 
 function ActorList(props) {
   const actors = props.actors ? props.actors.split(', ') : [];
-
   const title = props.title;
+  const icon = props.icon;
+
+  const pastelColors = ['#4d455d', '#e96479', '#7db9b6', '#ea5455', '#22a39f', '#ff6e31', '#804674', '#735f32', '#7286d3', '#8b7e74', "#90c8ac" ];
+
+  const randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
 
   const buildActorLink = (actorName) => {
     const wikiUrl = `https://en.wikipedia.org/wiki/${actorName.replace(/\s+/g, '_')}`;
@@ -23,7 +27,7 @@ function ActorList(props) {
   return (
     <div className="actor-list">
       
-      <p><strong>{title}:</strong> {actorComponents}</p>
+      <p><span style={{color: randomColor}} >{icon}</span><strong style={{marginLeft: "10px"}}>{title}:</strong> {actorComponents}</p>
     </div>
   );
 }
@@ -31,6 +35,7 @@ function ActorList(props) {
 ActorList.propTypes = {
   actors: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired
 };
 
 export default ActorList;

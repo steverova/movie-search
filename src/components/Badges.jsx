@@ -27,7 +27,7 @@ function Badges(props) {
 
 
 Badges.propTypes = {
-  badges: PropTypes.string.isRequired
+  badges: PropTypes.array.isRequired
 };
 
 export default Badges;
