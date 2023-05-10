@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import coverNotFound from "../assets/cover.png"
 
 export const MovieList = ({ movies }) => {
   return (
@@ -14,7 +15,7 @@ export const MovieList = ({ movies }) => {
               <img className="image"
                 src={
                   movie.poster === "N/A"
-                    ? "https://eticketsolutions.com/demo/themes/e-ticket/img/movie.jpg"
+                    ? coverNotFound
                     : movie.poster
                 }
                 alt={movie.title}

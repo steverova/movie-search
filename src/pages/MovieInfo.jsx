@@ -6,6 +6,7 @@ import ActorList from "../components/ActorList";
 import Badges from "../components/Badges";
 import "../assets/loader.css";
 import Footer from "../components/Footer";
+import coverNotFound from "../assets/cover.png"
 
 export default function MovieInfo() {
   let { title_id } = useParams();
@@ -38,9 +39,10 @@ export default function MovieInfo() {
                   className="col-md-6 p-5"
                 >
                   <img
+                  style={{height: "500px"}}
                     src={
                       movie.poster === "N/A"
-                        ? "https://eticketsolutions.com/demo/themes/e-ticket/img/movie.jpg"
+                        ? coverNotFound
                         : movie.poster
                     }
                     alt={movie.title}

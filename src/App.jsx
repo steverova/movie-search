@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import "./App.scss";
 import { Movies } from "./components/Movies";
 import { useMovies } from "./hooks/useMovies";
 import * as yup from "yup";
 import Pagination from "./components/Pagination";
 import Footer from "./components/Footer";
 import Moviefranchise from "./mocks/Moviefranchise";
+
 
 function App() {
   const [searchValue, setSearchValue] = useState({
@@ -90,6 +91,9 @@ function App() {
               onPageChange={clickPage}
               activePage={activePage}
             />
+          </div>
+          <div>
+  
           </div>
           <Movies movies={mappedMovies} />
           <div style={{ marginTop: "10px", marginBottom: "10px" }}>

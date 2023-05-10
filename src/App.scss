@@ -1,3 +1,6 @@
+
+
+
 .page {
   display: flex;
   flex-direction: column;
@@ -34,6 +37,10 @@ article {
   padding: 0.7rem;
   border-radius: 10px;
   background-color: #18222e;
+}
+
+.movie:hover{
+   box-shadow: #ff5148 0px 7px 29px 5px;
 }
 
 .title_movie {
@@ -145,3 +152,11 @@ a:active {
   object-fit: cover;
   transform: scale(1.1);
 }
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
