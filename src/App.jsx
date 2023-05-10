@@ -5,7 +5,7 @@ import { useMovies } from "./hooks/useMovies";
 import * as yup from "yup";
 import Footer from "./components/Footer";
 import Moviefranchise from "./mocks/Moviefranchise";
-import Pagination from "./components/Pagination";
+import PaginationCustom from "./components/PaginationCustom";
 
 function App() {
   const [searchValue, setSearchValue] = useState({
@@ -84,7 +84,7 @@ function App() {
             <ul
               style={{ display: "flex", flexWrap: "wrap", marginTop: "10px" }}
             ></ul>
-            <Pagination
+            <PaginationCustom
               totalResult={totalRes}
               maxButtons={2}
               onPageChange={clickPage}
@@ -99,7 +99,7 @@ function App() {
             <ul
               style={{ display: "flex", flexWrap: "wrap", marginTop: "10px" }}
             >
-              <Pagination
+              <PaginationCustom
                 totalResult={totalRes}
                 maxButtons={2}
                 onPageChange={clickPage}
