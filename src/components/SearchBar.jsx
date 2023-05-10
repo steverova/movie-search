@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import searchsvg from "../assets/magnifying-glass-solid.svg";
 
 const SearchBar = ({ value, onChange, errors = {} }) => {
-  
+
   const styleError = {
     width: "100%",
     border: errors.errors && "1px solid transparent",
@@ -13,10 +13,10 @@ const SearchBar = ({ value, onChange, errors = {} }) => {
   const styleInput = {
     color: "white",
     backgroundImage: `url('${searchsvg}')`,
-    backgroundPosition: "10px 50%",
+    backgroundPosition: "1em",
     backgroundRepeat: "no-repeat",
     paddingLeft: "40px",
-    backgroundSize: "3% auto",
+    backgroundSize: "10% auto",
     // add a conditional style for the placeholder
     ".error::placeholder": {
       color: errors.errors ? "green" : "#red",

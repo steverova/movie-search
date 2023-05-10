@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useMovie } from "../hooks/useMovie";
 import ActorList from "../components/ActorList";
 import Badges from "../components/Badges";
-import "../assets/loader.css";
+import "../assets/css/loader.css";
 import Footer from "../components/Footer";
 import coverNotFound from "../assets/cover.png";
 import "../assets/css/movie.css";

@@ -1,4 +1,4 @@
-import '../assets/Badgess.css';
+import '../assets/css/Badgess.css';
 import PropTypes from 'prop-types';
 
 function Badges(props) {
