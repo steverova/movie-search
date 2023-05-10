@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import "./App.scss";
+import "./App.css";
 import { Movies } from "./components/Movies";
 import { useMovies } from "./hooks/useMovies";
 import * as yup from "yup";
-import Pagination from "./components/Pagination";
 import Footer from "./components/Footer";
 import Moviefranchise from "./mocks/Moviefranchise";
-
+import Pagination from "./components/Pagination";
 
 function App() {
   const [searchValue, setSearchValue] = useState({

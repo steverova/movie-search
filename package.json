@@ -12,13 +12,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "compass-mixins": "^0.12.12",
     "package.json": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-paginate": "^8.2.0",
     "react-router-dom": "^6.11.1",
-    "vite-plugin-sass": "^0.1.0",
     "yup": "^1.1.1"
   },
   "devDependencies": {
@@ -30,7 +28,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "gh-pages": "^5.0.0",
-    "sass": "^1.62.1",
     "vite": "^4.3.0"
   }
 }
