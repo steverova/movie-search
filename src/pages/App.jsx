@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import { Movies } from "./components/Movies";
-import { useMovies } from "./hooks/useMovies";
+import "../assets/css/App.css";
+import { Movies } from "../components/Movies";
+import { useMovies } from "../hooks/useMovies";
 import * as yup from "yup";
-import Footer from "./components/Footer";
-import Moviefranchise from "./mocks/Moviefranchise";
-import PaginationCustom from "./components/PaginationCustom";
-import SearchBar from "./components/SearchBar";
+import Footer from "../components/Footer";
+import Moviefranchise from "../mocks/Moviefranchise";
+import PaginationCustom from "../components/PaginationCustom";
+import SearchBar from "../components/SearchBar";
 
 function App() {
   const [searchValue, setSearchValue] = useState({
