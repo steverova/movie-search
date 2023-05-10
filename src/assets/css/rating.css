@@ -14,7 +14,7 @@
   line-height: 1;
 
   &::before {
-    content: "🟐🟐🟐🟐🟐🟐🟐🟐🟐🟐";
+    content: "★★★★★★★★★★";
     letter-spacing: 1px;
     background: linear-gradient(
       90deg,

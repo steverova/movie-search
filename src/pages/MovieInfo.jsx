@@ -42,11 +42,11 @@ export default function MovieInfo() {
                   style={{
                     textAlign: "center",
                   }}
-                  className="col-md-6 p-5"
+                  className="col-md-6 p-5 pb-0"
                 >
                   <div className="">
                     <img
-                      style={{ height: "500px" }}
+                      style={{ height: "500px", objectFit: "cover" }}
                       src={
                         movie.poster === "N/A" ? coverNotFound : movie.poster
                       }
